@@ -22,16 +22,11 @@ public class Usuario implements Comparable<Usuario>, Serializable {
 	
 	public Usuario(){}
 	
-	public Usuario(String login, String senha, Data data_nascimento, Long distancia, String id, String bio, int IdadeMax, int IdadeMin) {
+	public Usuario(String login, String senha) {
 		 
 		this.Login = login;
 		this.Senha = senha;
-                this.data_nascimento = data_nascimento;
-                this.distancia = distancia;
-                this.id = id;
-                this.bio = bio;
-                this.IdadeMax = IdadeMax;
-                this.IdadeMin = IdadeMin;
+                 
 	}
 
 	public String getLogin() {
