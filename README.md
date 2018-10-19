@@ -9,3 +9,4 @@ O  SoulMate é um aplicativo que tem como objetivo proporcionar o encurtamento d
 # Padrões Utilizados
 - Template Method
 - Strategy
+- Singleton
