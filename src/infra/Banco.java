@@ -22,7 +22,7 @@ public class Banco {
     public static Boolean Save(HashMap<String, Usuario> usuario) throws PersistenciaSaveException {
         try {
         	
-        	File file = new File("C:/Users/comochega/workspace/ProjMapaSoul/src/Dados/Banco.txt");
+            File file = new File("C:/Users/comochega/workspace/ProjMapaSoul/src/Dados/Banco.txt");
             if (!file.exists()) {
                 file.createNewFile();
             }
@@ -40,7 +40,7 @@ public class Banco {
 	public static HashMap<String, Usuario> Load() throws PersistenciaLoadException {
         try {
         	
-        	File file = new File("C:/Users/comochega/workspace/ProjMapaSoul/src/Dados/Banco.txt");
+        File file = new File("C:/Users/comochega/workspace/ProjMapaSoul/src/Dados/Banco.txt");
             if (!file.exists()) {
                 file.createNewFile();
             }
