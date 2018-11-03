@@ -17,25 +17,22 @@ public class UsaMapas {
 	public static void main(String[] args) {
 		
 		Usuario usuario = new Usuario();
-		Usuario usuario2 = new Usuario();
-		Usuario usuario3 = new Usuario();
-		Usuario usuario4 = new Usuario();
 		
 		ImprimirUsuario imprimir = new ImprimirUsuario();
 				
-		try {
+		//try {
 			usuario.acao("neymar", "ney123", new InserirUsuario());
-                        usuario2.acao("huck", "huck123", new InserirUsuario());
-                        usuario3.acao("cassio", "cas123", new InserirUsuario());
-                        usuario4.acao("glauber", "glau123", new InserirUsuario());
+                        usuario.acao("huck", "huck123", new InserirUsuario());
+                        usuario.acao("cassio", "cas123", new InserirUsuario());
+                        usuario.acao("glauber", "glau123", new InserirUsuario());
                     
                         usuario.acao("neymar", "neynew", new EditarUsuario());
-                        usuario4.acao("glauber", "newgla", new EditarUsuario());
+                        usuario.acao("glauber", "newgla", new EditarUsuario());
 			
                         imprimir.ImprimirUsuario();
 			
 	
-		} catch (PersistenciaLoadException PL) {
+		/*} catch (PersistenciaLoadException PL) {
 			System.err.println(PL.getMessage());
 		}catch (InformacaoAlteradaException I) {
 			System.err.println(I.getMessage());
@@ -47,7 +44,7 @@ public class UsaMapas {
 			System.err.println(RU.getMessage());
 		}catch (ValidarCadastrosDeUsuariosException VCU) {
 			System.err.println(VCU.getMessage());
-		}
+		}*/
         
 		
 		
