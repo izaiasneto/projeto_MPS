@@ -7,50 +7,34 @@ import exceptions.PersistenciaSaveException;
 import exceptions.RemoveUsuarioException;
 import exceptions.UsuarioNaoEncontradoException;
 import exceptions.ValidarCadastrosDeUsuariosException;
-import view.Conta;
 import business.model.Usuario;
+import view.EditarUsuario;
+import view.ImprimirUsuario;
+import view.InserirUsuario;
 
 public class UsaMapas {
 
 	public static void main(String[] args) {
 		
-		Usuario usuario = new Usuario("neymar", "ney123");
-		Usuario usuario2 = new Usuario("huck", "huck123");
-		Usuario usuario3 = new Usuario("cassio", "cas123");
-		Usuario usuario4 = new Usuario("glauber", "glau123");
+		Usuario usuario = new Usuario();
+		Usuario usuario2 = new Usuario();
+		Usuario usuario3 = new Usuario();
+		Usuario usuario4 = new Usuario();
 		
-		Conta contaUsuario = new Conta();
+		ImprimirUsuario imprimir = new ImprimirUsuario();
 				
 		try {
-			/*  essa parte ta funcionado
-			contaUsuario.CadastradasUsuarioNoTreeMap(usuario);
-			contaUsuario.CadastradasUsuarioNoTreeMap(usuario2);
-			contaUsuario.CadastradasUsuarioNoTreeMap(usuario3);
-			contaUsuario.CadastradasUsuarioNoTreeMap(usuario4);
+			usuario.acao("neymar", "ney123", new InserirUsuario());
+                        usuario2.acao("huck", "huck123", new InserirUsuario());
+                        usuario3.acao("cassio", "cas123", new InserirUsuario());
+                        usuario4.acao("glauber", "glau123", new InserirUsuario());
+                    
+                        usuario.acao("neymar", "neynew", new EditarUsuario());
+                        usuario4.acao("glauber", "newgla", new EditarUsuario());
 			
-			contaUsuario.ImprimirUsuarioTreeMap();
-			*/
-			contaUsuario.CadastradasUsuarioNoHashMap(usuario);
-			contaUsuario.CadastradasUsuarioNoHashMap(usuario2);
-			contaUsuario.CadastradasUsuarioNoHashMap(usuario3);
-			contaUsuario.CadastradasUsuarioNoHashMap(usuario4);
+                        imprimir.ImprimirUsuario();
 			
-			contaUsuario.ImprimirUsuario();
-			
-			
-			contaUsuario.EditarUsuario(usuario4, "glauber", "glauber1234");
-			
-			contaUsuario.ImprimirUsuario();
-			
-			contaUsuario.RemoveUsuario("gl");
-			contaUsuario.RemoveUsuario("glauber");
-			
-			contaUsuario.ImprimirUsuario();
-			/*
-			TestaComparator TC = new TestaComparator();
-			TC.verificarTreeSet();
-			*/
-			
+	
 		} catch (PersistenciaLoadException PL) {
 			System.err.println(PL.getMessage());
 		}catch (InformacaoAlteradaException I) {

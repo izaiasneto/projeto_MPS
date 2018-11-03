@@ -1,5 +1,6 @@
 package business.model;
 
+import business.control.Command;
 import java.io.Serializable;
 import java.util.ArrayList;
 
@@ -119,6 +120,13 @@ public class Usuario implements Comparable<Usuario>, Serializable {
 
     public void setFotos(ArrayList<Foto> fotos) {
         this.fotos = fotos;
+    }
+    
+    
+    public void acao(String login, String senha, Command command){
+        
+        Usuario usuario = new Usuario(login, senha);
+        command.execute(usuario);     
     }
 }
 

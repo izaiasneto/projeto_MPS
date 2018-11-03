@@ -118,10 +118,12 @@ public class Comandos {
 			//Banco.Save(usuarios);
 			//throw new RemoveUsuarioException();
 		}else{
-			System.out.println("Usuario não encontrado.");
+			System.out.println("Usuario nï¿½o encontrado.");
 			//throw new UsuarioNaoEncontradoException();
 		}
 	
 	}
+
+
 }
 
