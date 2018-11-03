@@ -11,6 +11,7 @@ import business.model.Usuario;
 import view.EditarUsuario;
 import view.ImprimirUsuario;
 import view.InserirUsuario;
+import view.RemoveUsuario;
 
 public class UsaMapas {
 
@@ -28,6 +29,8 @@ public class UsaMapas {
                     
                         usuario.acao("neymar", "neynew", new EditarUsuario());
                         usuario.acao("glauber", "newgla", new EditarUsuario());
+                        
+                        usuario.acao("glauber", "newgla", new RemoveUsuario());
 			
                         imprimir.ImprimirUsuario();
 			

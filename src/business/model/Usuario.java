@@ -125,7 +125,11 @@ public class Usuario implements Comparable<Usuario>, Serializable {
     
     public void acao(String login, String senha, Command command){
         
-        Usuario usuario = new Usuario(login, senha);
+        Usuario usuario = new Usuario();
+        
+        usuario.setLogin(login);
+        usuario.setSenha(senha);
+        
         command.execute(usuario);     
     }
 }

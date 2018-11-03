@@ -7,13 +7,8 @@ package business.control;
 
 import business.model.Usuario;
 
-/**
- *
- * @author izaia
- */
 public interface Command {
     
-        public void execute(Usuario usuario);
-        
-    
+        void execute(Usuario usuario);
+           
 }
