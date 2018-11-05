@@ -1,9 +1,9 @@
 # Projeto_MPS
 
 Projeto da disciplina Método e Projeto de Software.
-Grupo: Izaias de Medeiros
-       Ian Lucas
-       Larissa Pereira
+Grupo: Izaias de Medeiros,
+       Ian Lucas,
+       Larissa Pereira,
        Glauber Ângelo
 
 # SoulMate
