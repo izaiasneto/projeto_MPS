@@ -7,6 +7,7 @@ import exceptions.PersistenciaSaveException;
 import exceptions.RemoveUsuarioException;
 import exceptions.UsuarioNaoEncontradoException;
 import exceptions.ValidarCadastrosDeUsuariosException;
+import business.model.TextoUsuario;
 import business.model.Usuario;
 import business.model.invoker;
 import java.util.HashMap;
@@ -24,7 +25,7 @@ public class UsaMapas {
 		ImprimirUsuario imprimir = new ImprimirUsuario();
                 
                 invoker invo = new invoker();
-				
+        		TextoUsuario SalvaEstado = new TextoUsuario();
 		//try {
                         
                         invo.invoker("neymar", "ney123", new InserirUsuario());
@@ -32,7 +33,21 @@ public class UsaMapas {
 			
                         imprimir.ImprimirUsuario();
 			
-	
+                        Usuario usuario = new Usuario("neymar", "ney123");
+                		Usuario usuario2 = new Usuario("huck", "huck123");
+                		Usuario usuario3 = new Usuario("cassio", "cas123");
+                        
+                        System.out.println("Memento");
+            			SalvaEstado.escreverTexto(usuario);
+            			SalvaEstado.escreverTexto(usuario2);
+            			SalvaEstado.escreverTexto(usuario3);
+            			
+            			SalvaEstado.mostrarTexto();
+            			
+            			SalvaEstado.desfazerEscrita();
+            			
+            			SalvaEstado.mostrarTexto();   
+
 		/*} catch (PersistenciaLoadException PL) {
 			System.err.println(PL.getMessage());
 		}catch (InformacaoAlteradaException I) {
