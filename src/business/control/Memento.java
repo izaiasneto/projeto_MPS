@@ -1,6 +1,6 @@
 package business.control;
 /**
- *  glauber teste 
+ *  glauber 
  */
 public class Memento {
 
