@@ -28,7 +28,7 @@ public class UsaMapas {
 		//try {
                         
                         invo.invoker("neymar", "ney123", new InserirUsuario());
-                        invo.invoker("glauber", "ney123", new InserirUsuario());
+                        invo.invoker("neymar", "ney123", new InserirUsuario());
 			
                         imprimir.ImprimirUsuario();
 			
@@ -51,10 +51,7 @@ public class UsaMapas {
 		
 	}
 
-    private static void invoker(String neymar, String ney123, InserirUsuario inserirUsuario) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-        
+     
         
        
 }
