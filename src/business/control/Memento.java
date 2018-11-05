@@ -1,5 +1,7 @@
 package business.control;
-
+/**
+ *  glauber teste 
+ */
 public class Memento {
 
 	protected String estado;
