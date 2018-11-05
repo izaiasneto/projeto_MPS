@@ -3,6 +3,8 @@ package business.model;
 import business.control.Command;
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 @SuppressWarnings("serial")
 public class Usuario implements Comparable<Usuario>, Serializable {
@@ -19,7 +21,6 @@ public class Usuario implements Comparable<Usuario>, Serializable {
         private int IdadeMax;
         private int IdadeMin;
 
-   
 	
 	public Usuario(){}
 	
@@ -122,16 +123,7 @@ public class Usuario implements Comparable<Usuario>, Serializable {
         this.fotos = fotos;
     }
     
-    
-    public void acao(String login, String senha, Command command){
-        
-        Usuario usuario = new Usuario();
-        
-        usuario.setLogin(login);
-        usuario.setSenha(senha);
-        
-        command.execute(usuario);     
-    }
+   
 }
 
 

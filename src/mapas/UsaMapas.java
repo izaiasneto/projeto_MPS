@@ -8,6 +8,9 @@ import exceptions.RemoveUsuarioException;
 import exceptions.UsuarioNaoEncontradoException;
 import exceptions.ValidarCadastrosDeUsuariosException;
 import business.model.Usuario;
+import business.model.invoker;
+import java.util.HashMap;
+import java.util.Map;
 import view.EditarUsuario;
 import view.ImprimirUsuario;
 import view.InserirUsuario;
@@ -16,21 +19,16 @@ import view.RemoveUsuario;
 public class UsaMapas {
 
 	public static void main(String[] args) {
-		
-		Usuario usuario = new Usuario();
-		
+            
+			
 		ImprimirUsuario imprimir = new ImprimirUsuario();
+                
+                invoker invo = new invoker();
 				
 		//try {
-			usuario.acao("neymar", "ney123", new InserirUsuario());
-                        usuario.acao("huck", "huck123", new InserirUsuario());
-                        usuario.acao("cassio", "cas123", new InserirUsuario());
-                        usuario.acao("glauber", "glau123", new InserirUsuario());
-                    
-                        usuario.acao("neymar", "neynew", new EditarUsuario());
-                        usuario.acao("glauber", "newgla", new EditarUsuario());
                         
-                        usuario.acao("glauber", "newgla", new RemoveUsuario());
+                        invo.invoker("neymar", "ney123", new InserirUsuario());
+                        invo.invoker("glauber", "ney123", new InserirUsuario());
 			
                         imprimir.ImprimirUsuario();
 			
@@ -52,6 +50,10 @@ public class UsaMapas {
 		
 		
 	}
+
+    private static void invoker(String neymar, String ney123, InserirUsuario inserirUsuario) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
         
         
        

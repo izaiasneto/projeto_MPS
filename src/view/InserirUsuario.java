@@ -11,20 +11,20 @@ import business.model.Usuario;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- *
- * @author izaia
- */
+
 public class InserirUsuario implements Command{
-    
-    Map<String, Usuario> mapaNomes = new HashMap<>();
-    
-    Comandos comando = new Comandos();
+
+    Comandos acao = new Comandos();
     
     @Override
-    public void execute(Usuario usuario) {
+    public void execute( Usuario usuario) {
         
-       comando.inserirUsuario(mapaNomes, usuario);
+        acao.inserirUsuario(usuario);
+       
     }
     
-}
+
+    
+ }
+    
+  

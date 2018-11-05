@@ -17,9 +17,10 @@ public class Comandos {
 	
 	
 	public HashMap<String, Usuario> usuarios;
+        Map<String, Usuario> mapaNomes = new HashMap<>();
 	
 	//imprimir mapas
-	public void imprimir(Map<String, Usuario> mapasNomes){
+	public void imprimir(/*Map<String, Usuario> mapasNomes*/){
 		
 		//usuarios = Banco.Load();
 		/*
@@ -28,32 +29,24 @@ public class Comandos {
             System.out.println("Login: " + usuario.getLogin() + " senha: " + usuario.getSenha());
         }*/
 		
-		for(String chave: mapasNomes.keySet()){
+		for(String chave: mapaNomes.keySet()){
 			String valor1, valor2;
-			valor1 = mapasNomes.get(chave).getLogin();
-			valor2 = mapasNomes.get(chave).getSenha();
+			valor1 = mapaNomes.get(chave).getLogin();
+			valor2 = mapaNomes.get(chave).getSenha();
 			System.out.println(" login: " + valor1 + " senha: " + valor2);
 		}
 		System.out.println("------------------------------------------");
 	}
 	
-	//imprimir treemaps
-	public void imprimirTreemap(Map<String, Usuario> mapasNomes){
-		
-		for (Usuario user : mapasNomes.values()) {
-            System.out.println("Login: " + user.getLogin() + " Senha: " + user.getSenha());
-		}
-		System.out.println("--------------------------------------------------");
-	}
 	
 	
 	//inserir usuario
-	public void inserirUsuario(Map<String, Usuario> mapasNomes, Usuario usuario){
+	public void inserirUsuario(Usuario usuario){
 		if(usuario.getLogin().length() <= 15 || !usuario.getLogin().equals("") || usuario.getLogin().matches(".*\\d+.*") || 
 		   usuario.getSenha().length() <= 16 || usuario.getSenha().length() >= 6){
 		
 			//usuarios = Banco.Load();
-			mapasNomes.put(usuario.getLogin(), usuario);
+			mapaNomes.put(usuario.getLogin(), usuario);
 			//Banco.Save(usuarios);
 		
 		}else{
@@ -63,10 +56,10 @@ public class Comandos {
 	}
 	
 	//editar mapas
-	public void editarUsuario(Map<String, Usuario> mapasNomes,Usuario usuario, String login, String senha){
+	public void editarUsuario(Usuario usuario, String login, String senha){
 		int encontrou = 0;
 		
-		for(String chave: mapasNomes.keySet()){
+		for(String chave: mapaNomes.keySet()){
 			
 			if(chave.equals(login)){
 				if(login.length() <= 15 || !login.equals("") || login.matches(".*\\d+.*") || 
@@ -74,7 +67,7 @@ public class Comandos {
 					
 					usuario.setLogin(login);
 					usuario.setSenha(senha);
-					mapasNomes.put(chave, usuario);
+					mapaNomes.put(chave, usuario);
 					encontrou = 1;
 					
 					/*usuarios = Banco.Load();
@@ -100,11 +93,11 @@ public class Comandos {
 		
 	}
 	
-	public void removeUsuario(Map<String, Usuario> mapasNomes, String login){
+	public void removeUsuario(String login){
 		String chaveEncontrada = null;
 		int encontrou = 0;
 		
-		for(String chave: mapasNomes.keySet()){
+		for(String chave: mapaNomes.keySet()){
 			if(chave.equals(login)){
 				encontrou = 1;
 				chaveEncontrada = chave;
@@ -112,7 +105,7 @@ public class Comandos {
 		}
 		if(encontrou == 1){
 			System.out.println("Usuario removido.");
-			mapasNomes.remove(chaveEncontrada);
+			mapaNomes.remove(chaveEncontrada);
 			//usuarios = Banco.Load();
 			//usuarios.remove(chaveEncontrada);
 			//Banco.Save(usuarios);
@@ -123,6 +116,8 @@ public class Comandos {
 		}
 	
 	}
+
+
 
 
 }

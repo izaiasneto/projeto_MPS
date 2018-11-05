@@ -6,18 +6,19 @@
 package view;
 
 import business.control.Comandos;
+import business.control.Command;
 import business.model.Usuario;
 import java.util.HashMap;
 import java.util.Map;
 
 
 public class ImprimirUsuario {
-    
-    Map<String, Usuario> mapaNomes = new HashMap<>();
-    
+   
     Comandos comando = new Comandos();
     
-    public void ImprimirUsuario(){
-            comando.imprimir(mapaNomes);   
-    }   
+    
+      public void ImprimirUsuario(){
+          comando.imprimir();
+    }  
+    
 }

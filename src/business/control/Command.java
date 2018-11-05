@@ -6,9 +6,11 @@
 package business.control;
 
 import business.model.Usuario;
+import java.util.Map;
 
 public interface Command {
     
         void execute(Usuario usuario);
+        
            
 }

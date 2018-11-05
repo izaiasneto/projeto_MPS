@@ -17,13 +17,17 @@ import java.util.Map;
  */
 public class RemoveUsuario implements Command{
     
-    Map<String, Usuario> mapaNomes = new HashMap<>();
+   //Map<String, Usuario> mapaNomes = new HashMap<>();
     
     Comandos comando = new Comandos();
     
-    @Override
-    public void execute(Usuario usuario) {     
-       comando.removeUsuario(mapaNomes, usuario.getLogin());
+    public RemoveUsuario() {
     }
+
+    @Override
+    public void execute(Usuario usuario) {
+            comando.removeUsuario(usuario.getLogin());
+    }
+ 
     
 }

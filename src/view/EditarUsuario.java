@@ -13,14 +13,19 @@ import java.util.Map;
 
 public class EditarUsuario implements Command{
     
-    Map<String, Usuario> mapaNomes = new HashMap<>();
-    
     Comandos comando = new Comandos();
     
+    public EditarUsuario(){
+    
+    }
+
     @Override
     public void execute(Usuario usuario) {
-        
-       comando.editarUsuario(mapaNomes, usuario, usuario.getLogin(), usuario.getSenha());
+        comando.editarUsuario( usuario, usuario.getLogin(), usuario.getSenha());
+                        
     }
+
     
 }
+
+
