@@ -3,10 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package view;
+package business.control.command;
 
-import business.control.Comandos;
-import business.control.Command;
+import business.control.RegrasDeNegocio;
 import business.model.Usuario;
 import java.util.HashMap;
 import java.util.Map;
@@ -14,12 +13,12 @@ import java.util.Map;
 
 public class InserirUsuario implements Command{
 
-    Comandos acao = new Comandos();
+	RegrasDeNegocio comando = new RegrasDeNegocio();
     
     @Override
     public void execute( Usuario usuario) {
         
-        acao.inserirUsuario(usuario);
+        comando.inserirUsuario(usuario);
        
     }
     

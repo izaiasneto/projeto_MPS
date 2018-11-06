@@ -3,29 +3,30 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package view;
+package business.control.command;
 
-import business.control.Comandos;
-import business.control.Command;
+import business.control.RegrasDeNegocio;
 import business.model.Usuario;
 import java.util.HashMap;
 import java.util.Map;
 
-public class EditarUsuario implements Command{
+/**
+ *
+ * @author izaia
+ */
+public class RemoveUsuario implements Command{
     
-    Comandos comando = new Comandos();
+   //Map<String, Usuario> mapaNomes = new HashMap<>();
     
-    public EditarUsuario(){
+	RegrasDeNegocio comando = new RegrasDeNegocio();
     
+    public RemoveUsuario() {
     }
 
     @Override
     public void execute(Usuario usuario) {
-        comando.editarUsuario( usuario, usuario.getLogin(), usuario.getSenha());
-                        
+            comando.removeUsuario(usuario.getLogin());
     }
-
+ 
     
 }
-
-

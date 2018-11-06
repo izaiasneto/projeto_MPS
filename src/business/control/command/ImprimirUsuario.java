@@ -3,10 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package view;
+package business.control.command;
 
-import business.control.Comandos;
-import business.control.Command;
+import business.control.RegrasDeNegocio;
 import business.model.Usuario;
 import java.util.HashMap;
 import java.util.Map;
@@ -14,7 +13,7 @@ import java.util.Map;
 
 public class ImprimirUsuario {
    
-    Comandos comando = new Comandos();
+	RegrasDeNegocio comando = new RegrasDeNegocio();
     
     
       public void ImprimirUsuario(){
