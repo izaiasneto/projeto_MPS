@@ -2,7 +2,7 @@ package business.control.util;
 
 import java.util.Comparator;
 
-import business.control.singleton;
+import business.control.singleton.singleton;
 import business.model.Usuario;
 
 public class ComparatorNome extends singleton implements Comparator<Usuario> {

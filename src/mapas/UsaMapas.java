@@ -12,7 +12,7 @@ import business.control.command.EditarUsuario;
 import business.control.command.ImprimirUsuario;
 import business.control.command.InserirUsuario;
 import business.control.command.RemoveUsuario;
-import business.model.TextoUsuario;
+import business.control.memento.TextoUsuario;
 import business.model.Usuario;
 import java.util.HashMap;
 import java.util.Map;

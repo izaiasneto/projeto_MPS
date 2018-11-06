@@ -10,7 +10,7 @@ import business.model.Usuario;
 import java.util.HashMap;
 import java.util.Map;
 
-public class EditarUsuario implements Command{
+public class EditarUsuario extends ComandoAbstrato{
     
     RegrasDeNegocio comando = new RegrasDeNegocio();
     
@@ -19,7 +19,7 @@ public class EditarUsuario implements Command{
     }
 
     @Override
-    public void execute(Usuario usuario) {
+    public void execute() {
         comando.editarUsuario( usuario, usuario.getLogin(), usuario.getSenha());
                         
     }

@@ -5,12 +5,10 @@
  */
 package business.control.command;
 
-import business.model.Usuario;
-import java.util.Map;
-
-public interface Command {
-    
-        void execute(Usuario usuario);
+abstract class ComandoAbstrato {
+  
+	abstract public void execute();
+//        void execute(Usuario usuario);
         
            
 }
