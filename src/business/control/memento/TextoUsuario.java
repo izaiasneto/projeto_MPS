@@ -1,6 +1,6 @@
-package business.model;
+package business.control.memento;
 
-import business.control.Memento;
+import business.model.Usuario;
 
 public class TextoUsuario {
 

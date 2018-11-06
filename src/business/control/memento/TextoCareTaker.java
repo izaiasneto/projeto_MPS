@@ -1,8 +1,7 @@
-package business.model;
+package business.control.memento;
 
 import java.util.ArrayList;
 
-import business.control.Memento;
 
 public class TextoCareTaker {
 
