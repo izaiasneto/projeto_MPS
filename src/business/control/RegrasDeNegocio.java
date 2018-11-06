@@ -13,7 +13,7 @@ import exceptions.UsuarioNaoEncontradoException;
 import exceptions.ValidarCadastrosDeUsuariosException;
 import business.model.Usuario;
 
-public class Comandos {
+public class RegrasDeNegocio {
 	
 	
 	public HashMap<String, Usuario> usuarios;

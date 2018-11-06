@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package business.control;
+package business.control.command;
 
 import business.model.Usuario;
 import java.util.Map;
