@@ -1,6 +1,7 @@
 package business.model;
 
-import business.control.Command;
+import business.control.command.Command;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;

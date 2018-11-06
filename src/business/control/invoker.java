@@ -5,6 +5,7 @@
  */
 package business.control;
 
+import business.control.command.Command;
 import business.model.Usuario;
 
 import java.util.HashMap;

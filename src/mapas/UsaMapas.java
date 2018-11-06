@@ -8,14 +8,14 @@ import exceptions.RemoveUsuarioException;
 import exceptions.UsuarioNaoEncontradoException;
 import exceptions.ValidarCadastrosDeUsuariosException;
 import business.control.invoker;
+import business.control.command.EditarUsuario;
+import business.control.command.ImprimirUsuario;
+import business.control.command.InserirUsuario;
+import business.control.command.RemoveUsuario;
 import business.model.TextoUsuario;
 import business.model.Usuario;
 import java.util.HashMap;
 import java.util.Map;
-import view.EditarUsuario;
-import view.ImprimirUsuario;
-import view.InserirUsuario;
-import view.RemoveUsuario;
 
 public class UsaMapas {
 
