@@ -26,9 +26,9 @@ public class Persistencia {
 			String valor1, valor2;
 			valor1 = mapaNomes.get(chave).getLogin();
 			valor2 = mapaNomes.get(chave).getSenha();
-			System.out.println(" login: " + valor1 + " senha: " + valor2);
+			System.out.println(" login: " + valor1 + "\n senha: " + valor2 + "\n-----------------");
 		}
-		System.out.println("------------------------------------------");
+		System.out.println("\n________________________________________________");
 	}
 	
 	//inserir usuario
@@ -75,10 +75,12 @@ public class Persistencia {
 			}
 		}
 		if(encontrou == 1){
-			System.out.println("Informacao alterada.");
+			System.out.println("\nInformacao de " +login+" foi alterada.");
+                        System.out.println("________________________________________________\n");
 			//throw new InformacaoAlteradaException();
 		}else{
-			System.out.println("Usuario nao existir.");
+			System.out.println("\nUsuario nao existe.");
+                        System.out.println("________________________________________________\n");
 			//throw new UsuarioNaoEncontradoException();
 		}
 		
@@ -95,15 +97,16 @@ public class Persistencia {
 			}
 		}
 		if(encontrou == 1){
-			System.out.println("Usuario removido.");
+			System.out.println("\nUsuario " +login+ " removido.");
+                        System.out.println("________________________________________________\n");
 			mapaNomes.remove(chaveEncontrada);
 			//usuarios = Banco.Load();
 			//usuarios.remove(chaveEncontrada);
 			//Banco.Save(usuarios);
 			//throw new RemoveUsuarioException();
 		}else{
-			System.out.println("Usuario n�o encontrado.");
-			//throw new UsuarioNaoEncontradoException();
+			System.out.println("\nUsuario nao encontrado.");
+			System.out.println("________________________________________________\n");
 		}
 	
 	}
