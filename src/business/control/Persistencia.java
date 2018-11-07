@@ -9,14 +9,28 @@ import exceptions.PersistenciaSaveException;
 import exceptions.RemoveUsuarioException;
 import exceptions.UsuarioNaoEncontradoException;
 import exceptions.ValidarCadastrosDeUsuariosException;
+import business.control.memento.TextoUsuario;
 import business.model.Usuario;
 
 public class Persistencia {
 	
 	
 	public HashMap<String, Usuario> usuarios;
-        Map<String, Usuario> mapaNomes = new HashMap<>();
-	
+    Map<String, Usuario> mapaNomes = new HashMap<>();
+    TextoUsuario guardaRegistro = new TextoUsuario();
+    
+    public void SalvarDadosNoMemento(Usuario usuario){
+    	guardaRegistro.salvarLoginSenha(usuario);
+    }
+    
+    public void RecuperaDadosMemento(Usuario usuario){
+    	guardaRegistro.desfazer();
+    }
+    
+    public void DadosSalvos(){
+    	guardaRegistro.mostrarTexto();
+    }
+        
 	//imprimir mapas
 	public void imprimir(){
 		
@@ -26,7 +40,7 @@ public class Persistencia {
 			valor2 = mapaNomes.get(chave).getSenha();
 			System.out.println(" login: " + valor1 + "\n senha: " + valor2 + "\n-----------------");
 		}
-		System.out.println("\n________________________________________________");
+		//System.out.println("\n________________________________________________");
 	}
 	
 	//inserir usuario

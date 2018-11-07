@@ -26,45 +26,45 @@ public class UsaMapas {
                 Usuario usuario3 = new Usuario("cassio", "cas123");
                 Usuario usuario4 = new Usuario("glauber", "gfa123");
                 
-                TextoUsuario guardaRegistro = new TextoUsuario();
+                
                 controle control = new controle();
                 Persistencia persist = new Persistencia();
                                 
                 try {
                     control.setcommand(persist, new InserirUsuarioCommand(usuario));
-                    guardaRegistro.salvarLoginSenha(usuario);
+                    persist.SalvarDadosNoMemento(usuario);
                     control.setcommand(persist, new InserirUsuarioCommand(usuario2));
-                    guardaRegistro.salvarLoginSenha(usuario2);
+                    persist.SalvarDadosNoMemento(usuario2);
                     control.setcommand(persist, new InserirUsuarioCommand(usuario3));
-                    guardaRegistro.salvarLoginSenha(usuario3);
+                    persist.SalvarDadosNoMemento(usuario3);
                     control.setcommand(persist, new InserirUsuarioCommand(usuario4));
-                    guardaRegistro.salvarLoginSenha(usuario4);
+                    persist.SalvarDadosNoMemento(usuario4);
                     
                     control.setcommand(persist, new ImprimirUsuario());
                                      
                     
 				}catch (ValidarCadastrosDeUsuariosException VCU) {
-					System.err.println(VCU.getMessage());
+					System.out.println(VCU.getMessage());
 				}catch (InformacaoAlteradaException I) {
-					System.err.println(I.getMessage());
+					System.out.println(I.getMessage());
 				}catch (UsuarioNaoEncontradoException UE) {
-					System.err.println(UE.getMessage());
+					System.out.println(UE.getMessage());
 				}catch (RemoveUsuarioException RU) {
-					System.err.println(RU.getMessage());
+					System.out.println(RU.getMessage());
 				}
                 
                 try {
                 	
-                    control.setcommand(persist, new EditarUsuarioCommand(usuario,"neymair","ney1234"));
+                    control.setcommand(persist, new EditarUsuarioCommand(usuario,"neymar","ney1234"));
                     
 				}catch (ValidarCadastrosDeUsuariosException VCU) {
-					System.err.println(VCU.getMessage());
+					System.out.println(VCU.getMessage());
 				}catch (InformacaoAlteradaException I) {
-					System.err.println(I.getMessage());
+					System.out.println(I.getMessage());
 				}catch (UsuarioNaoEncontradoException UE) {
-					System.err.println(UE.getMessage());
+					System.out.println(UE.getMessage());
 				}catch (RemoveUsuarioException RU) {
-					System.err.println(RU.getMessage());
+					System.out.println(RU.getMessage());
 				}
                 
                 try {
@@ -74,13 +74,13 @@ public class UsaMapas {
                     control.setcommand(persist, new RemoverUsuarioCommand(usuario3));
                        
 				}catch (ValidarCadastrosDeUsuariosException VCU) {
-					System.err.println(VCU.getMessage());
+					System.out.println(VCU.getMessage());
 				}catch (InformacaoAlteradaException I) {
-					System.err.println(I.getMessage());
+					System.out.println(I.getMessage());
 				}catch (UsuarioNaoEncontradoException UE) {
-					System.err.println(UE.getMessage());
+					System.out.println(UE.getMessage());
 				}catch (RemoveUsuarioException RU) {
-					System.err.println(RU.getMessage());
+					System.out.println(RU.getMessage());
 				}
 
                 try {                
@@ -88,21 +88,17 @@ public class UsaMapas {
                     control.setcommand(persist, new ImprimirUsuario());
                    
 				}catch (ValidarCadastrosDeUsuariosException VCU) {
-					System.err.println(VCU.getMessage());
+					System.out.println(VCU.getMessage());
 				}catch (InformacaoAlteradaException I) {
-					System.err.println(I.getMessage());
+					System.out.println(I.getMessage());
 				}catch (UsuarioNaoEncontradoException UE) {
-					System.err.println(UE.getMessage());
+					System.out.println(UE.getMessage());
 				}catch (RemoveUsuarioException RU) {
-					System.err.println(RU.getMessage());
+					System.out.println(RU.getMessage());
 				}
                 
-                System.out.println("Lendo usuarios no memento.");
-                guardaRegistro.desfazer();
-                guardaRegistro.desfazer();
-                guardaRegistro.desfazer();
-                guardaRegistro.desfazer();
-                       
+                System.out.println("\n\nLendo usuarios no memento.");
+                persist.DadosSalvos();       
 		
 		
 	}
