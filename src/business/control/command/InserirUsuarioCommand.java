@@ -6,20 +6,28 @@
 package business.control.command;
 
 import business.control.Persistencia;
+import business.model.Usuario;
 
 
-public class ImprimirUsuario implements Command{
+public class InserirUsuarioCommand implements Command{
     
-    public ImprimirUsuario(){
+    Usuario usuario = new Usuario();
+
+    
+    public InserirUsuarioCommand(Usuario usuario){
+        this.usuario = usuario;
     
     }
-
+       
     @Override
     public void execute(Persistencia p) {
-        p.imprimir();
+        
+        p.inserirUsuario(usuario);
+        
+       
     }
+  
     
+ }
     
-    
-    
-}
+  

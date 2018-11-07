@@ -13,21 +13,14 @@ import exceptions.UsuarioNaoEncontradoException;
 import exceptions.ValidarCadastrosDeUsuariosException;
 import business.model.Usuario;
 
-public class RegrasDeNegocio {
+public class Persistencia {
 	
 	
 	public HashMap<String, Usuario> usuarios;
         Map<String, Usuario> mapaNomes = new HashMap<>();
 	
 	//imprimir mapas
-	public void imprimir(/*Map<String, Usuario> mapasNomes*/){
-		
-		//usuarios = Banco.Load();
-		/*
-		for (Map.Entry<String, Usuario> entry : usuarios.entrySet()) {
-            Usuario usuario = entry.getValue();
-            System.out.println("Login: " + usuario.getLogin() + " senha: " + usuario.getSenha());
-        }*/
+	public void imprimir(){
 		
 		for(String chave: mapaNomes.keySet()){
 			String valor1, valor2;
@@ -37,8 +30,6 @@ public class RegrasDeNegocio {
 		}
 		System.out.println("------------------------------------------");
 	}
-	
-	
 	
 	//inserir usuario
 	public void inserirUsuario(Usuario usuario){

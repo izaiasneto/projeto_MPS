@@ -5,10 +5,10 @@
  */
 package business.control.command;
 
-abstract class ComandoAbstrato {
-  
-	abstract public void execute();
-//        void execute(Usuario usuario);
-        
-           
+import business.control.Persistencia;
+
+public interface Command {
+       
+    public void execute(Persistencia p);
+    
 }
