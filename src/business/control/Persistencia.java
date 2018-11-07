@@ -1,7 +1,5 @@
 package business.control;
 
-import infra.Banco;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -32,22 +30,23 @@ public class Persistencia {
 	}
 	
 	//inserir usuario
-	public void inserirUsuario(Usuario usuario){
-		if(usuario.getLogin().length() <= 15 || !usuario.getLogin().equals("") || usuario.getLogin().matches(".*\\d+.*") || 
-		   usuario.getSenha().length() <= 16 || usuario.getSenha().length() >= 6){
+	public void inserirUsuario(Usuario usuario) throws ValidarCadastrosDeUsuariosException{
+		if(usuario.getLogin().length() <= 15 && !usuario.getLogin().equals("") && !usuario.getLogin().matches(".*\\d+.*") && 
+		   usuario.getSenha().length() <= 16 && usuario.getSenha().length() >= 6){
 		
 			//usuarios = Banco.Load();
 			mapaNomes.put(usuario.getLogin(), usuario);
 			//Banco.Save(usuarios);
 		
 		}else{
-	        //throw new ValidarCadastrosDeUsuariosException();
+			String login = "login: " + usuario.getLogin() + " ou senha: " + usuario.getSenha() + " invalido.";
+	        throw new ValidarCadastrosDeUsuariosException(login);
 		}
 		
 	}
 	
 	//editar mapas
-	public void editarUsuario(Usuario usuario, String login, String senha){
+	public void editarUsuario(Usuario usuario, String login, String senha) throws InformacaoAlteradaException, UsuarioNaoEncontradoException{
 		int encontrou = 0;
 		
 		for(String chave: mapaNomes.keySet()){
@@ -74,20 +73,22 @@ public class Persistencia {
 				
 			}
 		}
+		String mensagem;
+		
 		if(encontrou == 1){
-			System.out.println("\nInformacao de " +login+" foi alterada.");
-                        System.out.println("________________________________________________\n");
-			//throw new InformacaoAlteradaException();
+			//System.out.println("\nInformacao de " +login+" foi alterada.");
+			mensagem = "\n________________________________________________\n\nInformacao de " +usuario.getLogin()+ " foi alterada.\n________________________________________________\n";
+            throw new InformacaoAlteradaException(mensagem);
 		}else{
-			System.out.println("\nUsuario nao existe.");
-                        System.out.println("________________________________________________\n");
-			//throw new UsuarioNaoEncontradoException();
+			//System.out.println("\nUsuario nao existe.");
+			mensagem = "\n________________________________________________\n\n Usuario " + login + " nao encontrado.\n________________________________________________\n" ;
+			throw new UsuarioNaoEncontradoException(mensagem);
 		}
 		
 	}
 	
-	public void removeUsuario(String login){
-		String chaveEncontrada = null;
+	public void removeUsuario(String login) throws UsuarioNaoEncontradoException, RemoveUsuarioException{
+		String chaveEncontrada = null, mensagem;
 		int encontrou = 0;
 		
 		for(String chave: mapaNomes.keySet()){
@@ -97,16 +98,15 @@ public class Persistencia {
 			}
 		}
 		if(encontrou == 1){
-			System.out.println("\nUsuario " +login+ " removido.");
-                        System.out.println("________________________________________________\n");
 			mapaNomes.remove(chaveEncontrada);
 			//usuarios = Banco.Load();
 			//usuarios.remove(chaveEncontrada);
 			//Banco.Save(usuarios);
-			//throw new RemoveUsuarioException();
+			mensagem = "\n________________________________________________\nUsuario " +login+ " removido.\n________________________________________________\n";
+			throw new RemoveUsuarioException(mensagem);
 		}else{
-			System.out.println("\nUsuario nao encontrado.");
-			System.out.println("________________________________________________\n");
+			mensagem = "\n________________________________________________\n\n Usuario " + login + " nao encontrado.\n________________________________________________\n";
+			throw new UsuarioNaoEncontradoException(mensagem);
 		}
 	
 	}

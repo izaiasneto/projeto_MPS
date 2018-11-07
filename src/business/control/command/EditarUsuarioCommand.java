@@ -1,6 +1,8 @@
 
 package business.control.command;
 
+import exceptions.InformacaoAlteradaException;
+import exceptions.UsuarioNaoEncontradoException;
 import business.control.Persistencia;
 import business.model.Usuario;
 
@@ -18,7 +20,7 @@ public class EditarUsuarioCommand implements Command{
     }
     
     @Override
-    public void execute( Persistencia p) {
+    public void execute( Persistencia p) throws InformacaoAlteradaException, UsuarioNaoEncontradoException {
         p.editarUsuario(usuario, login, senha);
     }
     

@@ -5,6 +5,7 @@
  */
 package business.control.command;
 
+import exceptions.ValidarCadastrosDeUsuariosException;
 import business.control.Persistencia;
 import business.model.Usuario;
 
@@ -20,7 +21,7 @@ public class InserirUsuarioCommand implements Command{
     }
        
     @Override
-    public void execute(Persistencia p) {
+    public void execute(Persistencia p) throws ValidarCadastrosDeUsuariosException {
         
         p.inserirUsuario(usuario);
         

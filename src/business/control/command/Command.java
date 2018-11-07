@@ -5,10 +5,14 @@
  */
 package business.control.command;
 
+import exceptions.InformacaoAlteradaException;
+import exceptions.RemoveUsuarioException;
+import exceptions.UsuarioNaoEncontradoException;
+import exceptions.ValidarCadastrosDeUsuariosException;
 import business.control.Persistencia;
 
 public interface Command {
        
-    public void execute(Persistencia p);
+    public void execute(Persistencia p) throws ValidarCadastrosDeUsuariosException, InformacaoAlteradaException, UsuarioNaoEncontradoException, RemoveUsuarioException;
     
 }
