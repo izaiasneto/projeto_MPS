@@ -12,12 +12,12 @@ public class TextoUsuario {
         texto = new String();
     }
  
-    public void escreverTexto(Usuario usuario) {
+    public void salvarLoginSenha(Usuario usuario) {
         caretaker.adicionarMemento(new Memento(texto));
         texto += " login: " + usuario.getLogin() + " senha: " + usuario.getSenha() + "\n";
     }
  
-    public void desfazerEscrita() {
+    public void desfazer() {
         texto = caretaker.getUltimoEstadoSalvo().getTextoSalvo();
     }
  
